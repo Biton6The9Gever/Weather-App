@@ -30,7 +30,7 @@ namespace WeatherApp
         public weatherStats current { get; set; }
     }
 
-    internal class Program
+    public class Program
     {
         static HttpClient client = new HttpClient();
 
@@ -105,7 +105,8 @@ namespace WeatherApp
 
         static async Task RunWeather(string degreeType, string speedType, string location)
         {
-            string apiKey = "cfa69a78c67b434181994718252004";
+            // get apiKey from the API,weatherapi.com site
+            string apiKey = "censored";
             Console.WriteLine("location");
             string url = $"http://api.weatherapi.com/v1/current.json?key={apiKey}&q={location}&aqi=no";
             try
